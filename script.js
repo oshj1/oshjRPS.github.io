@@ -11,3 +11,6 @@ function getHumanChoice(){
     return humanChoice;
 }
 
+function playRound(humanChoice, computerChoice){
+    humanChoice = humanChoice.toLowerCase();
+}
