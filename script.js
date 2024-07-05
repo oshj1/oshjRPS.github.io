@@ -23,6 +23,7 @@ function playRound(humanChoice, computerChoice){
     // check if the round is a draw first
     if (humanChoice === computerChoice){
         console.log("It's a draw!", humanChoice, "And", computerChoice);
+        return "draw"
     }
 
     // if it isnt check if the human chose scissors
@@ -74,7 +75,10 @@ function playGame(rounds){
     let computerScore = 0;
 
     for(let i=1; i<= rounds; i++){
-        playRound(getHumanChoice(), getComputerChoice());
+        let winner = playRound(getHumanChoice(), getComputerChoice());
+
+        
+
     }
 }
 
