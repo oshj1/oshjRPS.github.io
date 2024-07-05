@@ -1,6 +1,15 @@
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3);
-    return choice;
+    
+    if (choice === 0){
+        return "rock";
+    } 
+    else if (choice === 1){
+        return "paper";
+    }
+    else if (choice === 2){
+        return "scissors";
+    }
 }
 
 function getHumanChoice(){
@@ -64,6 +73,7 @@ function playGame(rounds){
     let humanScore = 0;
     let computerScore = 0;
 
-
-    getHumanChoice();
+    playRound(getHumanChoice(), getComputerChoice());
 }
+
+playGame(5);
