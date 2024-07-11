@@ -20,9 +20,11 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
     humanChoice = humanChoice.toLowerCase();
 
+    let resultsSection = document.querySelector(".results");
+
     // check if the round is a draw first
     if (humanChoice === computerChoice){
-        console.log("It's a draw!", humanChoice, "And", computerChoice);
+        resultsSection.textContent = "It's a draw!", humanChoice, "And", computerChoice;
         return "draw"
     }
 
@@ -30,12 +32,12 @@ function playRound(humanChoice, computerChoice){
     else if (humanChoice === "scissors"){
         // if the computer chose paper
         if (computerChoice === "paper"){
-            console.log("You win! Scissors beats paper");
+            resultsSection.textContent = "You win! Scissors beats paper";
             return "human";
         }
         // if the computer chose rock
         else if (computerChoice === "rock"){
-            console.log("You lose! Rock beats Scissors");
+            resultsSection.textContent = "You lose! Rock beats Scissors";
             return "computer";
         }
     }
@@ -44,12 +46,12 @@ function playRound(humanChoice, computerChoice){
     else if (humanChoice === "paper"){
         // check if computer chose scissors
         if (computerChoice === "scissors"){
-            console.log("You Lose! Scissors beats Paper");
+            resultsSection.textContent = "You Lose! Scissors beats Paper";
             return "computer";
         }
         // check if computer chose rock
         else if (computerChoice === "rock"){
-            console.log("You win! Paper beats rock");
+            resultsSection.textContent = "You win! Paper beats rock";
             return "human";
         }
     }
@@ -58,13 +60,13 @@ function playRound(humanChoice, computerChoice){
     else if (humanChoice === "rock"){
         // check if computer chose scissors
         if (computerChoice === "scissors"){
-            console.log("You win! Rock beats Scissors");
+            resultsSection.textContent = "You win! Rock beats Scissors";
             return ("human");
         }
 
         // check if compuer chose paper
         else if (computerChoice === "paper"){
-            console.log("You lose! Paper beats rock");
+            resultsSection.textContent = "You lose! Paper beats rock";
             return "computer";
         }
     }
