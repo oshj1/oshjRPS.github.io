@@ -90,9 +90,15 @@ function incrementScore(winner){
     }
 
     if(plrScoreN === 5){
-        results.textContent = "Congrats, you win!";
-    } else (cpuScoreN === 5)
-        results.textContent = "womp womp, you lost";
+        results.textContent = "Congrats, you win the game!";
+    } else if (cpuScoreN === 5)
+        results.textContent = "womp womp, you lost the game";
+
+    if (plrScoreN === 5 || cpuScoreN == 5){
+        plrScoreN = 0;
+        cpuScoreN = 0;
+        plrScore.textContent = "Your Score:" + plrScoreN;
+        cpuScore.textContent = "Computer Score:" + cpuScoreN;
     }
 }
 
