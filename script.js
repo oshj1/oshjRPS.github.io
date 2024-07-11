@@ -74,17 +74,39 @@ const playBtn = document.querySelector(".play-btn");
 
 const plrScore = document.querySelector(".plr-score");
 const cpuScore = document.querySelector(".cpu-score");
+const results = document.querySelector(".results");
 const Rounds = 5
 
+let plrScoreN = 0;
+let cpuScoreN = 0;
+
+function incrementScore(winner){
+    if (winner === "human"){
+        plrScoreN++;
+        plrScore.textContent = "Your Score:" + plrScoreN;
+    } else if (winner === "computer"){
+        cpuScoreN++;
+        cpuScore.textContent = "Computer Score:" + cpuScoreN;
+    }
+
+    if(plrScoreN === 5){
+        results.textContent = "Congrats, you win!";
+    } else (cpuScoreN === 5){
+        results.textContent = "womp womp, you lost";
+    }
+}
 
 rockBtn.addEventListener("click", function(){
     let winner = playRound("rock", getComputerChoice());
+    incrementScore(winner);
 });
 
 paperBtn.addEventListener("click", function(){
     let winner = playRound("paper", getComputerChoice());
+    incrementScore(winner);
 });
 
 scissorsBtn.addEventListener("click", function(){
     let winner = playRound("scissors", getComputerChoice());
+    incrementScore(winner);
 });
