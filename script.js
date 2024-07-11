@@ -72,7 +72,13 @@ const paperBtn = document.querySelector(".paper-btn");
 const scissorsBtn = document.querySelector(".scissors-btn");
 const playBtn = document.querySelector(".play-btn");
 
+const plrScore = document.querySelector(".plr-score");
+const cpuScore = document.querySelector(".cpu-score");
+
 playBtn.addEventListener("click", function(){
+    plrScore.textContent += " 0";
+    cpuScore.textContent += " 0";
+
 
 });
 
