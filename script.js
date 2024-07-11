@@ -91,7 +91,7 @@ function incrementScore(winner){
 
     if(plrScoreN === 5){
         results.textContent = "Congrats, you win!";
-    } else (cpuScoreN === 5){
+    } else (cpuScoreN === 5)
         results.textContent = "womp womp, you lost";
     }
 }
